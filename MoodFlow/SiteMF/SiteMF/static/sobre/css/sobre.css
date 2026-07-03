@@ -1,0 +1,131 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            background-color: #B3D4EC;
+            background-image:
+                repeating-linear-gradient(rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 1px, transparent 1px, transparent 20px),
+                repeating-linear-gradient(90deg, rgba(255,255,255,0.2) 0px, rgba(255,255,255,0.2) 1px, transparent 1px, transparent 20px);
+            font-family: 'Patrick Hand', cursive;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .titulo-pagina {
+            font-family: 'Caveat', cursive;
+            font-size: 3rem;
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 40px;
+            border-radius: 100px;
+            border: 2px solid white;
+        }
+
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 36px 44px;
+            width: 100%;
+            max-width: 700px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+        }
+
+        .card h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 1.8rem;
+            color: #5B8DB8;
+            margin-bottom: 14px;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+
+        .passos {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .passo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1.1rem;
+            color: #4a4a4a;
+        }
+
+        .passo .num {
+            background: #B3D4EC;
+            color: white;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .time-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 10px;
+        }
+
+        .membro {
+            background: #f0f7ff;
+            border-radius: 14px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            color: #5B8DB8;
+            font-family: 'Patrick Hand', cursive;
+        }
+
+        .footer {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.25);
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .footer-social { display: flex; gap: 16px; justify-content: center; margin-bottom: 8px; }
+        .footer-social a { color: white; font-size: 1.4rem; text-decoration: none; }
+        .footer-copy { font-size: 0.85rem; color: rgba(255,255,255,0.85); font-family: sans-serif; }
+
+        .tag {
+            font-family: 'Caveat', cursive;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.85);
+        }
+
+        .btn-home {
+            display: inline-block;
+            margin-top: 10px;
+            background: white;
+            color: #5B8DB8;
+            border: 2px solid rgba(255,255,255,0.75);
+            border-radius: 999px;
+            padding: 10px 24px;
+            text-decoration: none;
+            font-size: 1.05rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+        }

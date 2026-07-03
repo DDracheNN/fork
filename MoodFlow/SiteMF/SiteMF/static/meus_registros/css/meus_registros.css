@@ -1,0 +1,123 @@
+ *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #B3D4EC;
+            background-image:
+                repeating-linear-gradient(rgba(255,255,255,0.25) 0px, rgba(255,255,255,0.25) 1px, transparent 1px, transparent 20px),
+                repeating-linear-gradient(90deg, rgba(255,255,255,0.25) 0px, rgba(255,255,255,0.25) 1px, transparent 1px, transparent 20px);
+            font-family: 'Patrick Hand', cursive;
+            padding: 40px 20px;
+            color: #5B8DB8;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Card de Registro */
+        .registro-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid white;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(91, 141, 184, 0.15);
+            transition: transform 0.2s;
+        }
+
+        .registro-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .registro-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px dashed #B3D4EC;
+            padding-bottom: 12px;
+            margin-bottom: 16px;
+        }
+
+        .registro-data {
+            font-size: 1.2rem;
+            color: #6a8aa6;
+            font-weight: bold;
+        }
+
+        .registro-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 1.3rem;
+            color: #5B8DB8;
+        }
+
+        .badge-ansiedade {
+            background: #fde8ec;
+            color: #d9534f;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-weight: bold;
+        }
+
+        .badge-humor {
+            background: #f0f7ff;
+            color: #5B8DB8;
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-weight: bold;
+        }
+
+        .registro-texto {
+            font-size: 1.3rem;
+            color: #4a6a86;
+            line-height: 1.5;
+            white-space: pre-line; /* Mantém as quebras de linha que o usuário digitou */
+        }
+
+        .empty-state {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            font-size: 1.5rem;
+            color: #6a8aa6;
+        }
+
+        /* Botão Voltar */
+        .btn-voltar {
+            display: block;
+            width: fit-content;
+            margin: 30px auto;
+            background: white;
+            color: #5B8DB8;
+            padding: 12px 30px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .btn-voltar:hover {
+            background: #f0f7ff;
+            transform: translateY(-2px);
+        }
