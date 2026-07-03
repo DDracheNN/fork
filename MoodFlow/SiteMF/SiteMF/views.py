@@ -514,7 +514,7 @@ def _url_fazer_depois_contato(request):
     return reverse('humor')
 
 
-def manuak(request):
+def manual(request):
     return render(request, 'SiteMF/manual.html')
 
 
