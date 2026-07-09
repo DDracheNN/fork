@@ -1,6 +1,7 @@
 from datetime import date
 from django.contrib import messages
 from django.contrib.auth import login as auth_login
+from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
@@ -332,7 +333,38 @@ def listarusuario(request):
 
 @login_required
 def editarperfil(request):
-    return render(request, 'SiteMF/editarperfil.html')
+    perfil = getattr(request.user, 'perfil', None)
+    nome_completo = request.user.get_full_name().strip() or request.user.username
+
+    if request.method == 'POST':
+        email = (request.POST.get('email') or '').strip()
+        telefone = (request.POST.get('telefone') or '').strip()
+        senha = request.POST.get('senha') or ''
+
+        if not email:
+            messages.error(request, 'Informe um e-mail válido.')
+        else:
+            request.user.email = email
+            request.user.save(update_fields=['email'])
+
+            if perfil is not None and telefone:
+                perfil.telefone = telefone
+                perfil.save(update_fields=['telefone'])
+
+            if senha:
+                request.user.set_password(senha)
+                request.user.save(update_fields=['password'])
+                update_session_auth_hash(request, request.user)
+
+            messages.success(request, 'Perfil atualizado com sucesso.')
+            return redirect('editarperfil')
+
+    return render(request, 'SiteMF/editarperfil.html', {
+        'nome_completo': nome_completo,
+        'username_exibicao': request.user.username,
+        'email': request.user.email,
+        'telefone': perfil.telefone if perfil else '',
+    })
 
 
 @login_required

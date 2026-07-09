@@ -20,28 +20,29 @@
             <p>Atualize suas informações de contato e segurança</p>
         </div>
 
-        <form class="profile-form" action="#" method="POST">
+        <form class="profile-form" action="{% url 'editarperfil' %}" method="POST">
+            {% csrf_token %}
             
             <div class="input-group locked">
                 <label for="nome">Nome Completo (Não editável)</label>
-                <input type="text" id="nome" name="nome" value="Maria Silva" readonly>
+                <input type="text" id="nome" name="nome" value="{{ nome_completo }}" readonly>
             </div>
 
             <div class="input-group locked">
                 <label for="usuario">Nome de Usuário (Não editável)</label>
-                <input type="text" id="usuario" name="usuario" value="@mariasilva123" readonly>
+                <input type="text" id="usuario" name="usuario" value="@{{ username_exibicao }}" readonly>
             </div>
 
             <hr class="divider">
 
             <div class="input-group">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" value="maria@exemplo.com" required>
+                <input type="email" id="email" name="email" value="{{ email }}" required>
             </div>
 
             <div class="input-group">
                 <label for="telefone">Telefone</label>
-                <input type="tel" id="telefone" name="telefone" value="(11) 99999-9999" required>
+                <input type="tel" id="telefone" name="telefone" value="{{ telefone }}" required>
             </div>
 
             <div class="input-group">
